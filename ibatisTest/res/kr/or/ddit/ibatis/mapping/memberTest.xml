@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+	PUBLIC "-ibatis.apache.org//DTD SQL Map 2.0//EN"
+	"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="member"> 
+	<insert id="insertMember" parameterClass="memberVo"> 
+	 	insert into mymember(mem_id, mem_pass, mem_name, mem_tel, mem_addr)
+	 	values (#mem_id#, #mem_pass#, #mem_name#, #mem_tel#, #mem_addr#) 
+	 </insert>
+	 
+	<delete id="deleteMember" parameterClass="String"> 
+		delete from mymember where mem_id=#mem_id# 
+	</delete>
+	
+	<update id="updateMember" parameterClass="memberVo">
+		update mymember set mem_pass=#mem_pass#, mem_name=#mem_name#, mem_tel=#mem_name#, mem_addr=#mem_addr# where mem_id=#mem_id#
+	</update>
+	
+	<select id="getALLMember" resultClass="memberVo">
+		select * from mymember
+	</select>
+	
+	<!-- 
+		Map을 파라미터로 받아서 처리할 때 변수명은 Map의 key값으로 한다.
+		
+		파라미터로 가져온 값을 컬럼명등의 자리에 사용할경우에는 달러($)기호를 사용해서 
+		나타낸다. 예) $변수명$ 또는 $key값$ 
+	 -->
+	 <update id="memberUpdate2" parameterClass ="java.util.Map">
+	 	update mymember set $field$ =#data# where mem_id = #memId#
+	 </update>
+	 
+	 <select id="getMemberCount" parameterClass="String" resultClass="int">
+	 	select count(*) cnt from mymember where mem_id = #mem_id#
+	 </select>
+	
+	  
+	
+</sqlMap>

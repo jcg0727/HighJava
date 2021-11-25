@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>    
+
+<People>
+	<person>
+		<name>홍길동</name>
+		<hp>010-1234-5678</hp>
+		<addr>대전시 서구</addr>
+	</person>
+	
+	<person>
+		<name>이순신</name>
+		<hp>010-5678-5678</hp>
+		<addr>대전시 중구</addr>
+	</person>
+	
+	<person>
+		<name>강감찬</name>
+		<hp>010-1234-1234</hp>
+		<addr>대전시 유성구</addr>
+	</person>
+	
+	<person>
+		<name>권율</name>
+		<hp>010-9876-5432</hp>
+		<addr>대전시 대덕구</addr>
+	</person>
+
+</People>
